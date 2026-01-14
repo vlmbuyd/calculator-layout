@@ -1,0 +1,18 @@
+// --- Color Palette ---
+$color-black: #000000;
+$color-white: #ffffff;
+$color-gray-dark: #333333;
+$color-gray-light: #a5a5a5;
+$color-orange: #f1a33b;
+
+// --- Component Theme (실제 사용되는 변수 매핑) ---
+
+// 텍스트
+$text-primary: $color-white;
+$text-black: $color-black;
+
+// 배경색
+$bg-app: $color-black;
+$bg-btn-number: $color-gray-dark; // 숫자 (0-9)
+$bg-btn-function: $color-gray-light; // 상단 기능 (AC, +/-, %)
+$bg-btn-operator: $color-orange; // 우측 연산 (/, *, -, +, =)
