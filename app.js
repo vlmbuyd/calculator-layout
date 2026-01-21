@@ -25,8 +25,8 @@ const handleCalculateInput = (type, content) => {
     case 'operator':
       calculator.appendOperator(content);
       break;
-    case 'compute':
-      calculator.compute();
+    case 'calculate':
+      calculator.calculateResult();
       break;
   }
 };
