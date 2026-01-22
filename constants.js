@@ -3,7 +3,7 @@ export const INITIAL_DISPLAY_VALUE = '0';
 
 // 연산자 우선순위
 export const OPERATROS_PRIORITES = Object.freeze({
-  HIGH: ['×', '÷'],
+  HIGH: ['×', '÷', '%'],
   LOW: ['+', '−'],
 });
 
@@ -19,6 +19,7 @@ export const KEY_MAP = Object.freeze({
   '/': '÷',
   '+': '+',
   '-': '−',
+  '%': '%',
 
   Enter: '=',
   '=': '=',

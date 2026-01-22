@@ -69,7 +69,7 @@ export default class Calculator {
 
   /**
    * 단일 연산 수행
-   * @param {Array<'+' | '−' | '×' | '÷'>} operator - 연산자
+   * @param {Array<'+' | '−' | '×' | '÷' | '%'>} operator - 연산자
    * @param {number} prev - 이전 피연산자
    * @param {number} next - 다음 피연산자
    * @returns {number} - 연산 결과
@@ -84,13 +84,15 @@ export default class Calculator {
         return prev + next;
       case '−':
         return prev - next;
+      case '%':
+        return prev % next;
     }
   }
 
   /**
    * 연산자 우선순위에 따른 계산 수행
    * @param {Array<string>} expression - 계산식 배열
-   * @param {Array<'+' | '−' | '×' | '÷'>} targetOperators - 타겟 연산자 배열
+   * @param {Array<'+' | '−' | '×' | '÷' | '%'>} targetOperators - 타겟 연산자 배열
    */
   calculateByPriority(expression, targetOperators) {
     for (let i = 0; i < expression.length; i++) {
@@ -117,11 +119,11 @@ export default class Calculator {
   calculateResult() {
     const expression = [...this.history, this.currOperand];
 
-    // [연산자 우선순위] 곱셈/나눗셈 -> 덧셈/뺄셈 순으로 순회하여 계산
+    // [연산자 우선순위] 곱셈/나눗셈 -> 덧셈/뺄셈/나머지 순으로 순회하여 계산
     this.calculateByPriority(expression, OPERATROS_PRIORITES.HIGH);
     this.calculateByPriority(expression, OPERATROS_PRIORITES.LOW);
 
-    // 결과 화면에 표시
+    // 계산결과 화면에 표시
     const result = expression[0];
     this.displayEl.innerText = result;
   }
