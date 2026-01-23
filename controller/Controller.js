@@ -22,7 +22,7 @@ export default class Controller {
   }
 
   /**
-   * 계산기 입력 처리
+   * 마우스 입력 처리
    * @param {Event} e - 이벤트 객체
    */
   handleClick(e) {

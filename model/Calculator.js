@@ -43,7 +43,7 @@ export default class Calculator {
 
   /**
    * 연산자를 추가
-   * @param {operator} number - 추가할 연산자
+   * @param {'+' | '−' | '×' | '÷' | '%'} number - 추가할 연산자
    */
   appendOperator(operator) {
     // 마지막 요소가 연산자이고 아직 피연산자가 입력되지 않은 경우 연산자 교체
@@ -69,7 +69,7 @@ export default class Calculator {
 
   /**
    * 단일 연산 수행
-   * @param {Array<'+' | '−' | '×' | '÷' | '%'>} operator - 연산자
+   * @param {'+' | '−' | '×' | '÷' | '%'} operator - 연산자
    * @param {number} prev - 이전 피연산자
    * @param {number} next - 다음 피연산자
    * @returns {number} - 연산 결과
